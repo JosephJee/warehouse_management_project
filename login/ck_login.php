@@ -1,5 +1,5 @@
 <?php
-//chaewon5
+//chaewon5asdfasf
 function login($ID, $PW){
     global $con;
     global $table;
@@ -12,7 +12,7 @@ function login($ID, $PW){
     echo "$ID";
     echo"<br>";
     echo "$PW";  
-    // µ¥ÀÌÅÍ ³Ñ¾î¿È 
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ 
 
     if(!isset($_COOKIE["isOK"])){
         $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
@@ -24,7 +24,7 @@ function login($ID, $PW){
         echo "$row";
 
         if($row[0] == ""){
-            $errormsg="°èÁ¤ÀÌ ¾ø½À´Ï´Ù";
+            $errormsg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½";
             return 0;
         }
         else 
@@ -38,12 +38,12 @@ function login($ID, $PW){
             }
 
             else {
-                $errormsg=$ID."´Ô ÆÐ½º¿öµå°¡ Æ²·È½À´Ï´Ù";
+                $errormsg=$ID."ï¿½ï¿½ ï¿½Ð½ï¿½ï¿½ï¿½ï¿½å°¡ Æ²ï¿½È½ï¿½ï¿½Ï´ï¿½";
                 return 0;
             }
         }
     }
-    else // if(!isset($isOK)ÀÇ else ºÎºÐ
+    else // if(!isset($isOK)ï¿½ï¿½ else ï¿½Îºï¿½
     {
         SetCookie("isOK", $ID, time()+10, "/");
         return 2;
@@ -59,27 +59,27 @@ $login_result = login($ID, $PW);
 ?>
 
 <HTML>
-<HEAD><TITLE>·Î±×ÀÎ</TITLE></HEAD>
+<HEAD><TITLE>ï¿½Î±ï¿½ï¿½ï¿½</TITLE></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
-<?  // 8ÀÚ¸® ÀÌ»ó, ´ë¼Ò¹®ÀÚ Çã¿ë 
-if($login_result == 0) {  //ÆÐ½º¿öµå°¡ Æ²¸®¸é 0¹ÝÈ¯
+<?  // 8ï¿½Ú¸ï¿½ ï¿½Ì»ï¿½, ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
+if($login_result == 0) {  //ï¿½Ð½ï¿½ï¿½ï¿½ï¿½å°¡ Æ²ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½È¯
     print $errormsg."<br>";
-   // print "<font color=blue size=4>°èÁ¤ÀÌ ¾ø°Å³ª ºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù.</font></center><br>";
+   // print "<font color=blue size=4>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ Æ²ï¿½ï¿½ï¿½Ï´ï¿½.</font></center><br>";
     print "<table align='center'><tr>
     <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ¸ÞÀÎÈ­¸éÀ¸·Î °¡±â</a></font></td></tr></table></BODY></HTML>";
+    ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></font></td></tr></table></BODY></HTML>";
 } 
 
 else 
 {
-    if($login_result == 1) {  //¾ÆÀÌµð¿Í ºñ¹ø ¸ðµÎ db¿Í µ¿ÀÏÇÏ¸é 
+    if($login_result == 1) {  //ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ 
         echo "<script>location.href='../user/user.html'</script>";
     }
 
-    if($login_result == 2) {  //ÄíÅ° ÀÌ¹Ì °¡Áö°í ÀÖÀ» °æ¿ì 
-        print $_POST['ID']."´Ô ÀÌ¹Ì ÀÎÁõµÇ½Å ºÐÀÔ´Ï´Ù. 
-            <br>À¯È¿½Ã°£ÀÌ 10ÃÊ ¿¬ÀåµÇ¾ú½À´Ï´Ù"; 
+    if($login_result == 2) {  //ï¿½ï¿½Å° ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
+        print $_POST['ID']."ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½. 
+            <br>ï¿½ï¿½È¿ï¿½Ã°ï¿½ï¿½ï¿½ 10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½"; 
     }
 }
 ?>
